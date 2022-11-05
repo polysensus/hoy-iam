@@ -10,6 +10,14 @@ variable "polysensus_billing_account" {
     type = string
 }
 
+variable "polysensus_git_auth_client_id" {
+    type = string
+}
+
+variable "logsink_project_id" {
+    type = string
+}
+
 variable "cluster_name" {
     type = string
 }
