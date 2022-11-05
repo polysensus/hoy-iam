@@ -1,4 +1,13 @@
 variable "project_id" {
+    type = "string"
+}
+
+variable "polysensus_org_id" {
+    type = "string"
+}
+
+variable "polysensus_billing_account" {
+    type = "string"
 }
 
 variable "cluster_name" {
