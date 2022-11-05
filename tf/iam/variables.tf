@@ -26,6 +26,10 @@ variable "cluster_location" {
     type = string
 }
 
+variable "cluster_project_id" {
+    type = string
+}
+
 variable "firestore_service_namespace" {
     type = string
 }
