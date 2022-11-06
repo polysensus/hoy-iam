@@ -1,7 +1,7 @@
 generatorOptions:
   disableNameSuffixHash: true
 resources:
-  - ./secret-authex-tokenendpoint-clientid-secretsealed.yaml
+  - ./secret-auth-tokenexchange-clientid-secretsealed.yaml
 configMapGenerator:
   - name: authex
     literals:

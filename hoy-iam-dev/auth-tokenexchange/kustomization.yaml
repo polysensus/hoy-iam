@@ -1,6 +1,7 @@
 resources:
-  - ./secret-tokenendpoint-clientssealed.yaml
-  - ./secret-tokenendpoint-provider-signing-keysealed.yaml
+  - ./secret-auth-tokenexchange-clientssealed.yaml
+  # signging key is a 
+  - ./secret-auth-tokenexchange-provider-signing-keysealed.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -8,16 +9,16 @@ patchesJson6902:
   - target:
       version: v1
       kind: ConfigMap
-      name: tokenendpoint
+      name: auth-tokenexchange
     patch: |-
       - op: add
         path: /metadata/annotations/reloader.stakater.com~1match
         value: "true"
 configMapGenerator:
-  - name: tokenendpoint
+  - name: auth-tokenexchange
     literals:
-      - PROVIDER=https://sts.iona.thaumagen.io
-      - APIKEYSTORE_ADDRESS=apikeystore:8401
+      - PROVIDER=https://sts.hoy.polysensus.io
+      - APIKEYSTORE_ADDRESS=auth-apikeystore:8401
       - SIGNING_SECRET_FILE=/config/provider-signing-key.json
       - CLIENTS_FILE=/config/clients.json
       - PATH_PREFIX=""
