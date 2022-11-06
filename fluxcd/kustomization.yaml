@@ -4,9 +4,9 @@ namespace: hoy-iam-dev
 resources:
   - ./namespace.yaml
   - ../base
-  - auth-traefikforward
-  - auth-tokenexchange
-  - auth-apikeystore
+  - ./auth-traefikforward
+  - ./auth-tokenexchange
+  - ./auth-apikeystore
 patchesStrategicMerge:
   # Override the base source kz builds so that the resources we build are put in ns stage-iona-iam
   - ./patch-patch-ingressroute-auth-apikeystore.yaml
