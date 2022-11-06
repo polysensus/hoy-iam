@@ -5,7 +5,7 @@ metadata:
   name: auth-traefikforward
 spec:
   interval: 30s
-  image: eu.gcr.io/hoy-1/auth-traefikforward
+  image: eu.gcr.io/hoy-dev-1/auth-traefikforward
   accessFrom:
     namespaceSelectors:
       - matchLabels:
