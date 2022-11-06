@@ -1,0 +1,30 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: auth-traefikforward
+spec:
+  interval: 30s
+  image: eu.gcr.io/hoy-1/auth-traefikforward
+  accessFrom:
+    namespaceSelectors:
+      - matchLabels:
+          # XXX: TODO not sure why this is flux-system rather than iona-console
+          kubernetes.io/metadata.name: flux-system
+---
+# We probably need to have a specific one for each of staging/prod/dev
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: auth-traefikforward-main
+spec:
+  imageRepositoryRef:
+    name: auth-traefikforward
+  filterTags:
+    # pattern: '^main-[a-f0-9]+-[0-9]+.[0-9]+.(?P<monotonic>[0-9]+)'
+    pattern: '^main-(?P<ts>[0-9]+)'
+    extract: '$ts'
+  policy:
+    numerical:
+      order: asc
+

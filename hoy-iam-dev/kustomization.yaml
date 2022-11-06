@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base
+  - auth-traefikforward
+  - auth-tokenexchange
+  - auth-apikeystore
+patchesStrategicMerge:
+  # Override the base source kz builds so that the resources we build are put in ns stage-iona-iam
+  - ./patch-patch-ingressroute-auth-apikeystore.yaml
+  - ./patch-patch-replicas-auth-tokenexchange.yaml
+  - ./patch-targetnamespace-auth-apikeystore.yaml
+  - ./patch-imageautomation-auth-apikeystore.yaml
+  - ./patch-imageautomation-auth-traefikforward.yaml
+  - ./patch-targetnamespace-auth-traefikforward.yaml
+  - ./patch-targetnamespace-auth-tokenexchange.yaml
+  - ./patch-imageautomation-auth-tokenexchange.yaml
+

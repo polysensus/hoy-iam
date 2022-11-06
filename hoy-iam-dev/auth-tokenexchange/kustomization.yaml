@@ -1,0 +1,24 @@
+resources:
+  - ./secret-tokenendpoint-clientssealed.yaml
+  - ./secret-tokenendpoint-provider-signing-keysealed.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+patchesJson6902:
+  - target:
+      version: v1
+      kind: ConfigMap
+      name: tokenendpoint
+    patch: |-
+      - op: add
+        path: /metadata/annotations/reloader.stakater.com~1match
+        value: "true"
+configMapGenerator:
+  - name: tokenendpoint
+    literals:
+      - PROVIDER=https://sts.iona.thaumagen.io
+      - APIKEYSTORE_ADDRESS=apikeystore:8401
+      - SIGNING_SECRET_FILE=/config/provider-signing-key.json
+      - CLIENTS_FILE=/config/clients.json
+      - PATH_PREFIX=""
+      - CLIENT_SCOPES=["email", "openid", "rpc://admin_nodeInfo", "rpc://eth_blockNumber", "rpc://eth_*", "rpc://rpc_modules"]

@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  # metadata is used to match the target to patch
+  name: auth-tokenexchange
+spec:
+  patches:
+    - target:
+        kind: Deployment
+        name: auth-tokenexchange
+      patch: |-
+        - op: replace
+          path: /spec/replicas
+          value: 5
