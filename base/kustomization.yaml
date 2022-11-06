@@ -7,5 +7,5 @@ resources:
   - sync-auth-apikeystore.yaml
   - image-automation.yaml
   - image-automation-auth-tokenexchange.yaml
-  - image-automation-auth-traefikforwward.yaml
+  - image-automation-auth-traefikforward.yaml
   - image-automation-auth-apikeystore.yaml
