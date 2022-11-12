@@ -30,6 +30,11 @@ variable "cluster_location" {
     type = string
 }
 
+variable "cluster_region" {
+    type = string
+    default = "europe-west2"
+}
+
 variable "cluster_project_id" {
     type = string
 }
