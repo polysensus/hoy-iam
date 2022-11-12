@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  #labels:
-  #  toolkit.fluxcd.io/tenant: hoy-iam-dev
-  name: hoy-iam-dev
