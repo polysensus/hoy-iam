@@ -7,7 +7,7 @@ resources:
   - ./auth-apikeystore
 patchesStrategicMerge:
   # Override the base source kz builds so that the resources we build are put in ns stage-iona-iam
-  - ./patch-patch-ingressroute-auth-apikeystore.yaml
+  #- ./patch-patch-ingressroute-auth-apikeystore.yaml
   - ./patch-patch-replicas-auth-tokenexchange.yaml
   - ./patch-targetnamespace-auth-apikeystore.yaml
   - ./patch-imageautomation-auth-apikeystore.yaml

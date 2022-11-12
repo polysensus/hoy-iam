@@ -3,9 +3,9 @@ generatorOptions:
 resources:
   - ./secret-auth-tokenexchange-clientid-secretsealed.yaml
 configMapGenerator:
-  - name: auth-tokenexchange
+  - name: auth-traefikforward
     literals:
       - AUTHEX_ADDRESS=0.0.0.0:8401
-      - AUTHEX_PREFIX=stage/node/
-      - AUTHEX_PROXY_PREFIX=stage/chain/
-      - AUTHEX_EXCHANGEURL=http://tokenendpoint:3000/token
+      - AUTHEX_PREFIX=node/
+      - AUTHEX_PROXY_PREFIX=chain/
+      - AUTHEX_EXCHANGEURL=http://auth-traefikforward:3000/token
