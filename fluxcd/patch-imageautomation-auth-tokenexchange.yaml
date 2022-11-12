@@ -13,4 +13,4 @@ spec:
   images:
   - name: auth-tokenexchange
     newName: eu.gcr.io/hoy-dev-1/auth-tokenexchange
-    newTag: main-20 # {"$imagepolicy": "hoy-dev-iam:auth-tokenexchange-main:tag"}
+    newTag: main-20 # {"$imagepolicy": "hoy-iam-dev:auth-tokenexchange-main:tag"}
