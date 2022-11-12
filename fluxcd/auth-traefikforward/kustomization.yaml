@@ -3,7 +3,7 @@ generatorOptions:
 resources:
   - ./secret-auth-tokenexchange-clientid-secretsealed.yaml
 configMapGenerator:
-  - name: authex
+  - name: auth-tokenexchange
     literals:
       - AUTHEX_ADDRESS=0.0.0.0:8401
       - AUTHEX_PREFIX=stage/node/
