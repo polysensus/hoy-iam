@@ -13,4 +13,4 @@ spec:
   images:
   - name: auth-traefikforward
     newName: eu.gcr.io/hoy-dev-1/auth-traefikforward
-    newTag: main-7 # {"$imagepolicy": "hoy-iam-dev:auth-traefikforward-main:tag"}
+    newTag: main-8 # {"$imagepolicy": "hoy-iam-dev:auth-traefikforward-main:tag"}
