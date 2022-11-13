@@ -3,8 +3,8 @@ resources:
   # signging key is a 
   - ./secret-auth-tokenexchange-provider-signing-keysealed.yaml
 
-#generatorOptions:
-#  disableNameSuffixHash: true
+generatorOptions:
+  disableNameSuffixHash: true
 patchesJson6902:
   - target:
       version: v1
