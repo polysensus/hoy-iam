@@ -1,5 +1,5 @@
-generatorOptions:
-  disableNameSuffixHash: true
+#generatorOptions:
+#  disableNameSuffixHash: true
 resources:
   - ./secret-auth-apikeystore-clientid-secretsealed.yaml
 configMapGenerator:
