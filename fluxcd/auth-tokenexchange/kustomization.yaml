@@ -18,10 +18,9 @@ configMapGenerator:
   - name: auth-tokenexchange
     literals:
       - PROVIDER=https://sts.hoy.polysensus.io
-      - APIKEYSTORE_PROJECTID=hoy-iam-dev-3
-      - APIKEYSTORE_CLIENTCOLLECTIONID="fluxcd:hoy-iam:apikeystore:clients"
-      - APIKEYSTORE_ADDRESS=auth-apikeystore:8401
       - SIGNING_SECRET_FILE=/config/provider-signing-key.json
       - CLIENTS_FILE=/config/clients.json
       - PATH_PREFIX=""
+      - PROVIDER=https://localhost
+      - APIKEYSTORE_ADDRESS=auth-apikeystore.hoy-iam-dev.svc.cluster.local:8401
       - CLIENT_SCOPES=["email", "openid", "rpc://admin_nodeInfo", "rpc://eth_blockNumber", "rpc://eth_*", "rpc://rpc_modules"]
