@@ -18,6 +18,8 @@ configMapGenerator:
   - name: auth-tokenexchange
     literals:
       - PROVIDER=https://sts.hoy.polysensus.io
+      - APIKEYSTORE_PROJECTID=hoy-iam-dev-3
+      - APIKEYSTORE_CLIENTCOLLECTIONID="fluxcd:hoy-iam:apikeystore:clients"
       - APIKEYSTORE_ADDRESS=auth-apikeystore:8401
       - SIGNING_SECRET_FILE=/config/provider-signing-key.json
       - CLIENTS_FILE=/config/clients.json
