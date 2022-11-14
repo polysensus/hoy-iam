@@ -6,6 +6,6 @@ configMapGenerator:
   - name: auth-traefikforward
     literals:
       - AUTHEX_ADDRESS=0.0.0.0:8401
-      - AUTHEX_PREFIX=node/
+      - AUTHEX_PREFIX=chains/caimst-209301/node/
       - AUTHEX_PROXY_PREFIX=chain/
-      - AUTHEX_EXCHANGEURL=http://auth-traefikforward:3000/token
+      - AUTHEX_EXCHANGEURL=http://auth-tokenexchange.hoy-iam-dev.svc.cluster.local:3000/token
