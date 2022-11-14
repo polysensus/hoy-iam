@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "cert-wild-hoy-polysensus-io"
+spec:
+  commonName: "hoy.polysensus.io"
+  secretName: cert-wild-hoy-polysensus-io
+  dnsNames:
+    - "hoy.polysensus.io"
+    - "*.hoy.polysensus.io"
+  issuerRef:
+    name: letsencrypt-prod-primary-dns
+    kind: ClusterIssuer
