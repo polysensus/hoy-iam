@@ -6,4 +6,5 @@ metadata:
   # metadata is used to match the target to patch
   name: auth-tokenexchange
 spec:
+  serviceAccountName: iam
   targetNamespace: hoy-iam-dev
